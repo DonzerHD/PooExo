@@ -3,12 +3,18 @@ package exoPOO;
 public class Programme {
   public static void main(String[] args) {
 	  
-	 // Les Contacts
+	 //------------------ Programme Les Contacts ------------------------ //
+	  
+	            // Création des contacts
+	  
 	/* Contact personne1 = new Contact("Lemay", "Thomas", 22);
 	Contact personne2 = new Contact("Donove","Emmanuel", 44);
 	Contact personne3 = new Contact("Coco","Marie", 64);
 	Contact personne4 = new Contact("Longo","Paola", 43);
-	personne1.AffichageDuTri();
+	
+	// Affichage des infos et du trigramme et des initiales.
+	  
+	personne1.AffichageDuTri();  
 	personne1.AffichageIni();
 	personne1.AffichageInfo();
 	personne2.AffichageDuTri();
@@ -16,24 +22,47 @@ public class Programme {
 	personne2.AffichageInfo();
 	personne3.AffichageInfo(); */
 	
-	 //Comptes Bancaires
-  	 	 LigneCompteBancaire ligne1 = new LigneCompteBancaire("Carrefour", -64.45);
+	//----------------------- Programme Exercice 5 et 6 -----------------//
+  	 	
+	  
+	  // Création des lignes
+	  
+	   LigneCompteBancaire ligne1 = new LigneCompteBancaire("Carrefour", -64.45);
   	 	 LigneCompteBancaire ligne2 = new LigneCompteBancaire("Micromania", -32.55);
   	 	 LigneCompteBancaire ligne3 = new LigneCompteBancaire("Salaire", 2264.45);
-  	 	 LigneCompteBancaire ligne4 = new LigneCompteBancaire("Crabe", 23.44);
-  	 	 LigneCompteBancaire ligne5 = new LigneCompteBancaire("Trade", 22.33);
+  	 	 LigneCompteBancaire ligne4 = new LigneCompteBancaire("Crabe", 23323.44);
+  	 	 LigneCompteBancaire ligne5 = new LigneCompteBancaire("Trade", -2232.33);
   	 	  
+  	  // Affichage des lignes
+  	   
   	 	System.out.println(ligne1.Indication());
   	 	System.out.println(ligne2.Indication());
   	 	System.out.println(ligne3.Indication());
   	 	System.out.println(ligne4.Indication());
-  	 	System.out.println(ligne5.Indication());
+  	 	System.out.println(ligne5.Indication()); 
+  	 
   	 	
-  	 	CompteBancaire compte1 = new CompteBancaire(300.44);
-  	 	System.out.println(compte1.CalculSolde(ligne1.montant, ligne2.montant, ligne3.montant, ligne4.montant, ligne5.montant));
-  	 	System.out.println(compte1.CalculMoyenneLigne(ligne1.montant, ligne2.montant, ligne3.montant, ligne4.montant, ligne5.montant));
-  	 	compte1.LigneE(ligne1.montant, ligne2.montant, ligne3.montant, ligne4.montant, ligne5.montant);
-  	 	compte1.LigneF(ligne1.montant, ligne2.montant, ligne3.montant, ligne4.montant, ligne5.montant);
+  	 	
+  	    // Création compte  
+	  CompteBancaire compte1 = new CompteBancaire(300.44);
+  	 	// Calcul Solde 
+	  System.out.println(compte1.CalculSolde(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant()));
+  	 	// Calcul Moyenne ligne 
+	  System.out.println(compte1.CalculMoyenneLigne(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant()));
+  	 	// la ligne la plus élevée 
+	  compte1.LigneE(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant());
+  	 	// la ligne la plus petite 
+	  compte1.LigneF(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant());	     
          
+	
+	//----------------------- Programme Exercice 7-----------------//
+	  
+	 // L'utilisateur peut saisir les lignes comptables 
+	  
+	  LigneCompteBancaire ligne = new LigneCompteBancaire(); 
+
+	//----------------------- Programme Exercice 7-----------------// 
+	     
+
 	  }	
 }

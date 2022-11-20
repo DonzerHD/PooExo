@@ -27,11 +27,8 @@ public class Exo1 {
 	{
  	int compteur = 0; 
  	for (int i = 0; i < str.length(); i++) 
-   if (str.charAt(i) == chm)           // Minuscule
+   if (str.charAt(i) == chm || str.charAt(i) == chM)           // Minuscule et Majuscule
       compteur++;      
-   else if(str.charAt(i) == chM) {    // Majuscule
-	   compteur++;
-   }
  	return compteur;   // le compteur est celui qui compte le nombre du même caractère.
 	}   
 }

@@ -1,11 +1,15 @@
 package exoPOO;
 
+/**
+ * @author  Permet de créer des contacts avec nom ; prénom et âge .
+ *
+ */
 public class Contact {
 	// Attributs
    private String nom;
    private String prenom;
    private int age;
-   private static int users;
+   private static int users;    // Affiche la population (+1) à chaque fois qu'une personne est créée .
    
    //Constructeur
    public Contact(final String nom,final String prenom,final int age) {
