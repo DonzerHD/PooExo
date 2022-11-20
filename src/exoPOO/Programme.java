@@ -22,12 +22,11 @@ public class Programme {
 	personne2.AffichageInfo();
 	personne3.AffichageInfo(); */
 	
-	//----------------------- Programme Exercice 5 et 6 -----------------//
+	//----------------------- -----------------//
   	 	
+	   // Création des lignes
 	  
-	  // Création des lignes
-	  
-	   LigneCompteBancaire ligne1 = new LigneCompteBancaire("Carrefour", -64.45);
+	   /* LigneCompteBancaire ligne1 = new LigneCompteBancaire("Carrefour", -64.45);
   	 	 LigneCompteBancaire ligne2 = new LigneCompteBancaire("Micromania", -32.55);
   	 	 LigneCompteBancaire ligne3 = new LigneCompteBancaire("Salaire", 2264.45);
   	 	 LigneCompteBancaire ligne4 = new LigneCompteBancaire("Crabe", 23323.44);
@@ -39,29 +38,24 @@ public class Programme {
   	 	System.out.println(ligne2.Indication());
   	 	System.out.println(ligne3.Indication());
   	 	System.out.println(ligne4.Indication());
-  	 	System.out.println(ligne5.Indication()); 
+  	 	System.out.println(ligne5.Indication()); */
   	 
-  	 	
-  	 	
-  	    // Création compte  
-	  CompteBancaire compte1 = new CompteBancaire(300.44);
-  	 	// Calcul Solde 
-	  System.out.println(compte1.CalculSolde(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant()));
-  	 	// Calcul Moyenne ligne 
-	  System.out.println(compte1.CalculMoyenneLigne(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant()));
-  	 	// la ligne la plus élevée 
-	  compte1.LigneE(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant());
-  	 	// la ligne la plus petite 
-	  compte1.LigneF(ligne1.getMontant(), ligne2.getMontant(), ligne3.getMontant(), ligne4.getMontant(), ligne5.getMontant());	     
-         
+  	 	 	   
 	
 	//----------------------- Programme Exercice 7-----------------//
 	  
 	 // L'utilisateur peut saisir les lignes comptables 
+	  CompteBancaire compte1 = new CompteBancaire(1000);
+	  System.out.println("--------------------------------------------------------");
+	  System.out.println(compte1.CalculMoyenneLigne());
+	  System.out.println("--------------------------------------------------------");
+	  System.out.println(compte1.LigneE());
+	  System.out.println("--------------------------------------------------------");
+	  System.out.println(compte1.CalculSolde());
+	  System.out.println("--------------------------------------------------------");
+	 
 	  
-	  LigneCompteBancaire ligne = new LigneCompteBancaire(); 
 
-	//----------------------- Programme Exercice 7-----------------// 
 	     
 
 	  }	

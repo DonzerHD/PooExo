@@ -1,66 +1,129 @@
 package exoPOO;
 
+import java.util.Scanner;
+
 public class CompteBancaire {
 	// attributs
       private double solde;
+      private double[] montant1;
+      private String[] intitulé1;
         
     
     //Constructeur
-     public CompteBancaire(double solde) { 
-    	  this.solde = solde;
-      }
-
+      
+ 
+  public CompteBancaire(double solde) {
+	   Scanner scanner = new Scanner(System.in);
+  	   this.solde = solde;
+  	       System.out.println("--------------------------------------------------------");
+          System.out.println("Le solde de votre compte est de : " + this.solde + "€");
+          System.out.println("--------------------------------------------------------");
+  		  System.out.print("Combien de lignes voulez vous tapez : ");
+		       int chiffre = scanner.nextInt();
+		       montant1 = new double[chiffre];
+		       intitulé1 = new String[chiffre];
+  		        UtilisateurLigne();    
+     }
     //méthodes
      
      
      // Calcul de la solde
-     public String CalculSolde(double ligne1, double ligne2, double ligne3, double ligne4, double ligne5) { 
-    	double sommeFinal = this.solde + ligne1 + ligne2 + ligne3 + ligne4 + ligne5;
-    	 return "Le solde de votre compte est de : " + sommeFinal + "€";
+     public String CalculSolde() { 
+    	 double somme = 0;
+         for( double i : montant1) {
+             somme = somme + i;
+         }
+    	double sommeFinal = this.solde + somme ;
+    	 return "Le solde de votre compte est maintenant de : " + sommeFinal + "€";
      }
      
      
      // Calcul la moyenne des lignes
-     public String CalculMoyenneLigne(double ligne1, double ligne2, double ligne3, double ligne4, double ligne5) {
-    	 double sommeFinal = (ligne1 + ligne2 + ligne3 + ligne4 + ligne5) / 5;
-    	 return "La moyenne des lignes de compte est de : " + sommeFinal + "€";
+     public String CalculMoyenneLigne() {
+    	 int somme = 0;
+    	 for(int i = 0; i < montant1.length; i++){
+    	 somme += montant1[i];
+    	 }
+    	 double sommeFinal = (double) somme / montant1.length;
+    	 return "La moyenne des lignes du compte est de : " + sommeFinal + "€";
      }
      
      
-     //Affiche la ligne la plus élevée
-     public void  LigneE(double ligne1, double ligne2, double ligne3, double ligne4, double ligne5) {
-    	 if( ligne1 >= ligne2 && ligne1 >= ligne3 && ligne1 >= ligne4 && ligne1 >= ligne5)           // ligne 1 plus grand 
-             System.out.println("La ligne la plus élevée est "+ ligne1 + "€");
-         else if (ligne2 >= ligne1 && ligne2 >= ligne3 && ligne2 >= ligne4 && ligne2 >= ligne5)      // ligne 2 plus grand 
-             System.out.println("La ligne la plus élevée est "+ ligne2 + "€");
-         else if (ligne3 >= ligne1 && ligne3 >= ligne2 && ligne3 >= ligne4 && ligne3 >= ligne5)      // ligne 3 plus grand 
-             System.out.println("La ligne la plus élevée est "+ ligne3 + "€");
-         else if (ligne4 >= ligne1 && ligne4 >= ligne2 && ligne4 >= ligne3 && ligne4 >= ligne5)      // ligne 4 plus grand 
-             System.out.println("La ligne la plus élevée est "+ ligne4 + "€");
-         else
-             System.out.println("La ligne la plus élevée est " + ligne5 + "€");                     // ligne 5 plus grand 
+     //Affiche la ligne la plus élevée et plus faible
+     public String  LigneE() { 
+    	 double maxVal = Integer.MAX_VALUE;
+    	 double minVal = Integer.MIN_VALUE;
+    	 
+    	 for(int i = 0; i < montant1.length; i++){
+    		 if(montant1[i] < maxVal) {
+    		 maxVal = montant1[i];}
+    		 if(montant1[i] > minVal) {
+    		minVal = montant1[i];}
+    		 } 
+    		 return "La ligne la plus élevée est " +  minVal + "€ et la plus faible est " + maxVal + "€";
      }
      
-     // Affiche la ligne la plus petite
-     public void  LigneF(double ligne1, double ligne2, double ligne3, double ligne4, double ligne5) {    
-    	 if( ligne1 <= ligne2 && ligne1 <= ligne3 && ligne1 <= ligne4 && ligne1 <= ligne5)                // ligne 1 plus petite
-             System.out.println("La ligne la plus faible est "+ ligne1 + "€");
-         else if (ligne2 <= ligne1 && ligne2 <= ligne3 && ligne2 <= ligne4 && ligne2 <= ligne5)           // ligne 2 plus petite
-             System.out.println("La ligne la plus faible est "+ ligne2 + "€"); 
-         else if (ligne3 <= ligne1 && ligne3 <= ligne2 && ligne3 <= ligne4 && ligne3 <= ligne5)           // ligne 3 plus petite
-             System.out.println("La ligne la plus faible est "+ ligne3 + "€");
-         else if (ligne4 <= ligne1 && ligne4 <= ligne2 && ligne4 <= ligne3 && ligne4 <= ligne5)           // ligne 4 plus petite
-             System.out.println("La ligne la plus faible est "+ ligne4 + "€");
-         else
-             System.out.println("La ligne la plus faible est " + ligne5 + "€");                           // ligne 5 plus petite
-     }
+   
+     public void UtilisateurLigne() {
+	       Scanner scanner = new Scanner(System.in);
+	       
+	       // Intitulé
+	       
+  	   for (int i = 0; i < intitulé1.length ; i++) {
+  		   int a = i + 1;
+  		   System.out.print("Rentrez l'intitulé " + a + " : ");
+  		   intitulé1[i] = scanner.nextLine();		   
+  	   }
+  	   
+  	  // Montant
+  	   
+  	   for (int i = 0; i < montant1.length ; i++) {
+  		   System.out.print("Rentrez le montant de l'intitulé [" + intitulé1[i] + "] : ");    
+  		   montant1[i] = scanner.nextDouble();	    	    		   
+  	   }
+  	   System.out.println("------------------Relevé de compte------------------------------");
+	         	   
+  	   // Affichage des lignes saisie par l'utilisateur
+  	   for (int i = 0; i < montant1.length ; i++) {
+      	   if (montant1[i] > 0 ) {   // Si le montant est supérieur à 0
+      		   System.out.println( intitulé1[i] + " +" + montant1[i] + "€");
+      		
+      	   }else{   // Si le montant est inférieur à 0
+      	       System.out.println( intitulé1[i] + " " + montant1[i] + "€");       
+      	   }    	
+      	   
+  	   	}  
+					
+	 }
+
 
 	public double getSolde() {
 		return solde;
 	}
 
+
 	public void setSolde(double solde) {
 		this.solde = solde;
 	}
+
+
+	public double[] getMontant1() {
+		return montant1;
+	}
+
+
+	public void setMontant1(double[] montant1) {
+		this.montant1 = montant1;
+	}
+
+
+	public String[] getIntitulé1() {
+		return intitulé1;
+	}
+
+
+	public void setIntitulé1(String[] intitulé1) {
+		this.intitulé1 = intitulé1;
+	} 
 }
 
