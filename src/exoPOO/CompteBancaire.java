@@ -2,17 +2,23 @@ package exoPOO;
 
 import java.util.Scanner;
 
+/**
+ * @author Thomas et Padoue
+ * 
+ */
 public class CompteBancaire {
-	// attributs
+
       private double solde;
       private double[] montant1;
       private String[] intitulé1;
         
     
-    //Constructeur
-      
+   
  
-  public CompteBancaire(double solde) {
+  /**
+ * @param solde
+ */
+public CompteBancaire(double solde) {
 	   Scanner scanner = new Scanner(System.in);
   	   this.solde = solde;
   	       System.out.println("--------------------------------------------------------");
@@ -24,11 +30,11 @@ public class CompteBancaire {
 		       intitulé1 = new String[chiffre];
   		        UtilisateurLigne();    
      }
-    //méthodes
-     
-     
-     // Calcul de la solde
-     public String CalculSolde() { 
+    
+     /**
+     * @return
+     */
+    public String CalculSolde() { 
     	 double somme = 0;
          for( double i : montant1) {
              somme = somme + i;
@@ -38,8 +44,11 @@ public class CompteBancaire {
      }
      
      
-     // Calcul la moyenne des lignes
-     public String CalculMoyenneLigne() {
+     
+     /**
+     * @return
+     */
+    public String CalculMoyenneLigne() {
     	 int somme = 0;
     	 for(int i = 0; i < montant1.length; i++){
     	 somme += montant1[i];
@@ -49,8 +58,11 @@ public class CompteBancaire {
      }
      
      
-     //Affiche la ligne la plus élevée et plus faible
-     public String  LigneE() { 
+     
+     /**
+     * @return
+     */
+    public String  LigneE() { 
     	 double maxVal = Integer.MAX_VALUE;
     	 double minVal = Integer.MIN_VALUE;
     	 
@@ -64,10 +76,14 @@ public class CompteBancaire {
      }
      
    
-     public void UtilisateurLigne() {
+    
+    /**
+     * 
+     */
+    public void UtilisateurLigne() {
 	       Scanner scanner = new Scanner(System.in);
 	       
-	       // Intitulé
+	      
 	       
   	   for (int i = 0; i < intitulé1.length ; i++) {
   		   int a = i + 1;
@@ -75,20 +91,19 @@ public class CompteBancaire {
   		   intitulé1[i] = scanner.nextLine();		   
   	   }
   	   
-  	  // Montant
+  	 
   	   
   	   for (int i = 0; i < montant1.length ; i++) {
   		   System.out.print("Rentrez le montant de l'intitulé [" + intitulé1[i] + "] : ");    
   		   montant1[i] = scanner.nextDouble();	    	    		   
   	   }
   	   System.out.println("------------------Relevé de compte------------------------------");
-	         	   
-  	   // Affichage des lignes saisie par l'utilisateur
+	
   	   for (int i = 0; i < montant1.length ; i++) {
-      	   if (montant1[i] > 0 ) {   // Si le montant est supérieur à 0
+      	   if (montant1[i] > 0 ) {   
       		   System.out.println( intitulé1[i] + " +" + montant1[i] + "€");
       		
-      	   }else{   // Si le montant est inférieur à 0
+      	   }else{   
       	       System.out.println( intitulé1[i] + " " + montant1[i] + "€");       
       	   }    	
       	   

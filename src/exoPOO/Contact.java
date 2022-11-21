@@ -1,9 +1,6 @@
 package exoPOO;
 
-/**
- * @author  Permet de créer des contacts avec nom ; prénom et âge .
- *
- */
+
 public class Contact {
 	// Attributs
    private String nom;
