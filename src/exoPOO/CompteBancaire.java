@@ -22,7 +22,8 @@ public class CompteBancaire {
 		       int chiffre = scanner.nextInt();
 		       montant1 = new double[chiffre];
 		       intitulé1 = new String[chiffre];
-  		        UtilisateurLigne();    
+  		        UtilisateurLigne(); 
+  		      scanner.close();
      }
     //méthodes
      
@@ -40,11 +41,11 @@ public class CompteBancaire {
      
      // Calcul la moyenne des lignes
      public String CalculMoyenneLigne() {
-    	 int somme = 0;
+    	 double somme = 0;
     	 for(int i = 0; i < montant1.length; i++){
     	 somme += montant1[i];
     	 }
-    	 double sommeFinal = (double) somme / montant1.length;
+    	 double sommeFinal = somme / montant1.length;
     	 return "La moyenne des lignes du compte est de : " + sommeFinal + "€";
      }
      
@@ -88,9 +89,11 @@ public class CompteBancaire {
       	   if (montant1[i] > 0 ) {   // Si le montant est supérieur à 0
       		   System.out.println( intitulé1[i] + " +" + montant1[i] + "€");
       		
-      	   }else{   // Si le montant est inférieur à 0
+      	   }else{   
       	       System.out.println( intitulé1[i] + " " + montant1[i] + "€");       
       	   }    	
+      	   
+      	   scanner.close();
       	   
   	   	}  
 					
