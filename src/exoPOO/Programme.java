@@ -22,7 +22,7 @@ public class Programme {
 	personne2.AffichageInfo();
 	personne3.AffichageInfo(); */
 	
-	//----------------------- -----------------//
+	//----------------------- Exercice 5-----------------//
   	 	
 	   // Création des lignes
 	  
@@ -42,7 +42,7 @@ public class Programme {
   	 
   	 	 	   
 	
-	//----------------------- Programme Exercice 7-----------------//
+	//----------------------- Programme Exercice 6 et 7-----------------//
 	  
 	 // L'utilisateur peut saisir les lignes comptables 
 	  CompteBancaire compte1 = new CompteBancaire(1000);
@@ -55,7 +55,9 @@ public class Programme {
 	  System.out.println("--------------------------------------------------------");
 	 
 	  
-
+	//----------------------- Programme Exercice 8-----------------//
+	  
+	  
 	     
 
 	  }	
