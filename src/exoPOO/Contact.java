@@ -1,37 +1,59 @@
 package exoPOO;
 
 
+/**
+ * This class allows you to create a contact
+ * @author Thomas.L et Padoue
+ */
 public class Contact {
-	// Attributs
+
    private String nom;
    private String prenom;
    private int age;
-   private static int users;    // Affiche la population (+1) à chaque fois qu'une personne est créée .
+   /**
+ * Adds +1 to the population each time a user is created.
+ */
+private static int users;    
    
-   //Constructeur
-   public Contact(final String nom,final String prenom,final int age) {
+ 
+   /**
+    * This class allows you to create a contact
+ * @param nom  name
+ * @param prenom first name
+ * @param age age
+ * 
+ */
+public Contact(final String nom,final String prenom,final int age) {
 	   this.nom = nom;
 	   this.prenom = prenom;
 	   this.age = age;
 	   users++;
    }
    
-   // -- Méthodes --
-   
-   // Affichage des informations du contact
-   public void AffichageInfo() {
+  
+
+   /**
+ * Displays contact information .
+ */
+public void AffichageInfo() {
 	   System.out.println("Nom : " + this.nom + " Prénom : " + this.prenom + " Age : " + this.age + " ans. Population : " + users );
    }  
-   // Affiche le trigramme
-   public void AffichageDuTri() {
+ 
+   /**
+ * Displays the trigram of the contact .
+ */
+public void AffichageDuTri() {
 	   String lettreP= this.prenom.substring(0,1);
 	   String lettreNf= this.nom.substring(0,1);
 	   String nomM = this.nom.toUpperCase();
 	   char lettreNl = nomM.charAt(nomM.length()-1);
 	   System.out.println(lettreP + lettreNf + lettreNl);
    }
-   //Affiche les initiales
-	   public void AffichageIni(){
+
+	   /**
+	 * Displays contact initials
+	 */
+	public void AffichageIni(){
 		 String lettreP= this.prenom.substring(0,1);
 		String lettreNf= this.nom.substring(0,1);
 		System.out.println(lettreNf + lettreP);

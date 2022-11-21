@@ -3,10 +3,11 @@ package exoPOO;
 import java.util.Scanner;
 
 /**
- * @author Thomas et Padoue
- * 
+ * This class will allow us to create a bank account.
+ * @author Thomas.L et Padoue 
  */
 public class CompteBancaire {
+
 
       private double solde;
       private double[] montant1;
@@ -16,23 +17,24 @@ public class CompteBancaire {
    
  
   /**
- * @param solde
+   * Creation of the bank account.
+ * @param solde amount of bank account
  */
-public CompteBancaire(double solde) {
-	   Scanner scanner = new Scanner(System.in);
-  	   this.solde = solde;
-  	       System.out.println("--------------------------------------------------------");
+      public CompteBancaire(double solde) {
+    	  Scanner scanner = new Scanner(System.in);
+    	  this.solde = solde;
+  	      System.out.println("--------------------------------------------------------");
           System.out.println("Le solde de votre compte est de : " + this.solde + "€");
           System.out.println("--------------------------------------------------------");
   		  System.out.print("Combien de lignes voulez vous tapez : ");
-		       int chiffre = scanner.nextInt();
-		       montant1 = new double[chiffre];
-		       intitulé1 = new String[chiffre];
-  		        UtilisateurLigne();    
+		  int chiffre = scanner.nextInt();
+		  montant1 = new double[chiffre];
+		  intitulé1 = new String[chiffre];
+  		  UtilisateurLigne();    
      }
     
      /**
-     * @return
+     * @return the final amount .
      */
     public String CalculSolde() { 
     	 double somme = 0;
@@ -46,7 +48,7 @@ public CompteBancaire(double solde) {
      
      
      /**
-     * @return
+     * @return The average of the account lines added
      */
     public String CalculMoyenneLigne() {
     	 int somme = 0;
@@ -60,7 +62,7 @@ public CompteBancaire(double solde) {
      
      
      /**
-     * @return
+     * @return The highest and lowest line the user added .
      */
     public String  LigneE() { 
     	 double maxVal = Integer.MAX_VALUE;
@@ -78,7 +80,7 @@ public CompteBancaire(double solde) {
    
     
     /**
-     * 
+     * Allows the user to enter the title and amount.
      */
     public void UtilisateurLigne() {
 	       Scanner scanner = new Scanner(System.in);
