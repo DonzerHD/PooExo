@@ -52,13 +52,14 @@ public class Programme {
 	  System.out.println(compte1.LigneE());
 	  System.out.println("--------------------------------------------------------");
 	  System.out.println(compte1.CalculSolde());
-	  System.out.println("--------------------------------------------------------");
+	  System.out.println("--------------------------------------------------------"); 
 	 
 	  
 	//----------------------- Programme Exercice 8-----------------//
 	  
 	  
-	     
+	     Outil Marteau = new Outil();
+	     Outil Tournevis = new Outil("Tournevis","Outil emmanché comportant une tige cylindrique en acier dont l'extrémité est adaptée pour visser ou dévisser des vis." , "Le tournevis est un outil de poing utilisé entre autres pour l'insertion et le retrait des vis dans les matériaux.", "Maison");
 
 	  }	
 }

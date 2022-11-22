@@ -1,10 +1,14 @@
 package exoPOO;
 
+/**
+ * @author Thomas.L et Padoue
+ *
+ */
 public class Outil {
-      String nom;
-      String description;
-      String utilisaton;
-      String lieuxStockage;
+      private String nom;
+      private String description;
+      private String utilisaton;
+      private String lieuxStockage;
       
       public Outil(String nom, String description, String utilisation, String lieuxStockage) {
     	 this.nom = nom;
@@ -15,5 +19,37 @@ public class Outil {
       
       public Outil(){    	  
       }
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getUtilisaton() {
+		return utilisaton;
+	}
+
+	public void setUtilisaton(String utilisaton) {
+		this.utilisaton = utilisaton;
+	}
+
+	public String getLieuxStockage() {
+		return lieuxStockage;
+	}
+
+	public void setLieuxStockage(String lieuxStockage) {
+		this.lieuxStockage = lieuxStockage;
+	}
       
 }
